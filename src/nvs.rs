@@ -1,6 +1,5 @@
 use alloc::rc::Rc;
 use embassy_sync::{blocking_mutex::raw::CriticalSectionRawMutex, mutex::Mutex};
-use embedded_storage::ReadStorage;
 use esp_nvs::{Get, Key, Set};
 use esp_storage::FlashStorage;
 use portable_atomic::AtomicU8;

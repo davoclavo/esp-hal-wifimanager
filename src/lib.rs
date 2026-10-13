@@ -92,7 +92,8 @@ pub async fn init_wm(
         #[cfg(feature = "ap")]
         let configuration = esp_radio::wifi::Config::AccessPointStation(
             Default::default(),
-            esp_radio::wifi::ap::AccessPointConfig::default().with_ssid(generated_ssid.clone()),
+            esp_radio::wifi::ap::AccessPointConfig::default()
+                .with_ssid(generated_ssid.as_str().try_into()?),
         );
 
         #[cfg(not(feature = "ap"))]
